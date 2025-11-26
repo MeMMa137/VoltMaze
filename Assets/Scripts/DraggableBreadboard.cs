@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DraggableBreadboard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class DraggableBreadboard : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
     private bool dragging = false;
     private Vector3 offset;
@@ -14,8 +15,16 @@ public class DraggableBreadboard : MonoBehaviour, IPointerDownHandler, IPointerU
         offset = transform.position - new Vector3(mousePos.x, mousePos.y, transform.position.z);
     }
 
-    void Update()
+    public void OnDrag(PointerEventData eventData)
     {
-        
+        if (!dragging)
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(eventData.position);
+            transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z) + offset;
+        }
+    }
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        dragging = false;
     }
 }
