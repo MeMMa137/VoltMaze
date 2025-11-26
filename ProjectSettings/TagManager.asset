@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Component
+  - Hole
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Components
-  - 
+  - mouse
   - 
   - 
   - 
@@ -44,4 +45,7 @@ TagManager:
     locked: 0
   - name: Components
     uniqueID: 474354193
+    locked: 0
+  - name: mouse
+    uniqueID: 1327251423
     locked: 0
