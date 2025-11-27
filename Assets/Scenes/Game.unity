@@ -1707,6 +1707,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wirePickup: {fileID: 1673655244}
+  attachRadius: 0.12
+  holeLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!4 &471432962 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4005346016862065158, guid: 25f999e93b6234c4a9c53218d5429053, type: 3}
@@ -4517,6 +4521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499929352}
   - component: {fileID: 1499929351}
+  - component: {fileID: 1499929353}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4537,6 +4542,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wirePickup: {fileID: 1673655244}
+  attachRadius: 0.12
+  holeLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!4 &1499929352
 Transform:
   m_ObjectHideFlags: 0
@@ -4552,6 +4561,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1499929353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499929350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98d95e463a8140a69e80474ff966388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wirePrefab: {fileID: 5917102259816738359, guid: abe913e9b0bf44555a8d01320b586df5, type: 3}
 --- !u!4 &1533684768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4005346016862065158, guid: 25f999e93b6234c4a9c53218d5429053, type: 3}
@@ -5320,7 +5342,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 474354193
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8fc3cb256b6bb4e58aa6e70c8e39eb01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6104,6 +6126,10 @@ PrefabInstance:
     - target: {fileID: 8609853492974895378, guid: 25f999e93b6234c4a9c53218d5429053, type: 3}
       propertyPath: m_Name
       value: Hole (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609853492974895378, guid: 25f999e93b6234c4a9c53218d5429053, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

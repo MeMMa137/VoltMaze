@@ -15,7 +15,7 @@ TagManager:
   - UI
   - Components
   - mouse
-  - 
+  - Hole
   - 
   - 
   - 
@@ -48,4 +48,7 @@ TagManager:
     locked: 0
   - name: mouse
     uniqueID: 1327251423
+    locked: 0
+  - name: wires
+    uniqueID: 2013748503
     locked: 0
