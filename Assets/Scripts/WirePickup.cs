@@ -12,10 +12,10 @@ public class WirePickup : MonoBehaviour
 
     void Update()
     {
-        if (dragging && currentWire != null)
+        if (currentWire != null && dragging && lr != null)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
+            mousePos.z = -1;
             lr.SetPosition(1, mousePos);
         }
 
@@ -33,8 +33,10 @@ public class WirePickup : MonoBehaviour
         lr = currentWire.GetComponent<LineRenderer>();
         if (lr == null)
         {
-            Debug.LogError("Wire prefab must have a LineRenderer!");
-            return;
+            lr.sortingLayerName = "Wires";
+            lr.sortingOrder = 100;
+            lr.startWidth = 0.05f;
+            lr.endWidth = 0.05f;
         }
 
         pointA = startPos;
@@ -48,6 +50,7 @@ public class WirePickup : MonoBehaviour
     {
         if (currentWire == null) return;
 
+        endPos.z = -1;
         lr.SetPosition(1, endPos);
         currentWire = null;
         lr = null;
